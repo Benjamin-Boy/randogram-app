@@ -1,0 +1,120 @@
+@import "../abstracts/variables";
+
+.trekcard-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  transition: 300ms ease-in-out;
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 300ms ease-in-out;
+  }
+
+  &-header,
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+
+    &-path,
+    &-difficulty,
+    &-duration {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+
+      h2 {
+        color: $gray;
+        transform-origin: 0 50%;
+        transform: scaleX(0);
+
+        @keyframes infosHover {
+          0% {
+            transform: scale(0);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+
+    &-duration {
+      h2 {
+        transform-origin: 100% 50%;
+      }
+    }
+
+    &-bookmark {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      border-radius: 15px;
+
+      .icon:hover {
+        color: #ff1990;
+      }
+    }
+  }
+
+  .icon {
+    transform: scale(0);
+    color: #fff;
+    font-size: 1.3rem;
+
+    @keyframes iconsHover {
+      0% {
+        transform: scale(0);
+      }
+      85% {
+        transform: scale(1.3);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &:hover {
+    // transform: scale(1.2);
+    border: 2px solid #ff1990;
+    z-index: 1;
+
+    .trekcard-container-header-path,
+    .trekcard-container-footer-difficulty,
+    .trekcard-container-footer-duration {
+      h2 {
+        animation: infosHover 500ms 250ms forwards;
+      }
+    }
+
+    .icon {
+      animation: iconsHover 400ms forwards;
+    }
+
+    .trekcard-container-img {
+      transform: scale(0.8);
+      filter: brightness(0.8);
+    }
+  }
+}
