@@ -1,10 +1,83 @@
 .home-container {
   position: relative;
-  margin-top: 0.5rem;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-  // gap: rem;
-  // padding: 0.8rem;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+
+  &-trekcards {
+    width: 55%;
+    height: calc(100vh - 120px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    overflow: auto;
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    // scrollbar-color: #346abf white;
+    // scrollbar-width: thin;
+
+    // /* Global */
+    // textarea::-webkit-scrollbar {
+    //   width: 16px;
+    // }
+    // /* Fond */
+    // textarea::-webkit-scrollbar-track {
+    //   position: relative;
+    //   box-shadow: inset -5px 0 0 1px white, inset -9px 0 0 1px #346abf;
+    // }
+    // /* Ascenseur */
+    // textarea::-webkit-scrollbar-thumb {
+    //   background: #346abf;
+    //   border-radius: 8px;
+    //   border-top: 1px white solid;
+    //   box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.45),
+    //     inset 0 0 5px 2px rgba(255, 255, 255, 0.4);
+    // }
+    // /*Angle*/
+    // textarea::-webkit-scrollbar-corner {
+    //   background: #346abf;
+    // }
+
+    // /* Boutons */
+    // textarea::-webkit-scrollbar-button:single-button {
+    //   display: block;
+    //   border-style: solid;
+    //   height: 20px;
+    //   width: 16px;
+    // }
+    // /* Haut */
+    // textarea::-webkit-scrollbar-button:single-button:vertical:decrement {
+    //   border-width: 0 8px 12px 8px;
+    //   border-color: transparent transparent #346abf transparent;
+    // }
+    // textarea::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    //   border-color: transparent transparent #1f3f72 transparent;
+    // }
+    // /* Bas */
+    // textarea::-webkit-scrollbar-button:single-button:vertical:increment {
+    //   border-width: 12px 8px 0 8px;
+    //   border-color: #346abf transparent transparent transparent;
+    // }
+    // textarea::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+    //   border-color: #1f3f72 transparent transparent transparent;
+    // }
+  }
+
+  &-featuring {
+    position: sticky;
+    top: 80px;
+    // padding-right: 10rem;
+  }
+
+  &-profile {
+    position: absolute;
+    top: 0;
+    right: 30px;
+  }
 }

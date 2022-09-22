@@ -1,0 +1,147 @@
+@use "../../scss/abstracts" as *;
+
+.trekcard-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 1px solid transparent;
+  cursor: pointer;
+  @include size(260px, 260px);
+
+  transition: all 300ms 150ms ease-in-out;
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 300ms 150ms ease-in-out;
+  }
+
+  &-background {
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.7091037098433124) 0%,
+      rgba(46, 46, 46, 0) 23%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    color: $primary-color;
+    padding: 0.5rem;
+    transform: translateY(33%);
+    transition: transform 300ms 150ms ease-in-out;
+  }
+
+  &-header {
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0.5rem;
+  }
+
+  &-footer {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      &-destination {
+        & > :nth-child(2) {
+          opacity: 0.65;
+        }
+      }
+    }
+
+    &-stats {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.1rem;
+
+      &-top,
+      &-bottom {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.3rem;
+
+        & > :nth-child(1),
+        & > :nth-child(2) {
+          display: flex;
+          align-items: center;
+        }
+
+        & > :nth-child(3) span {
+          color: $difficulty-color--easy;
+        }
+      }
+
+      &-description {
+        width: 80%;
+        opacity: 0.5;
+      }
+
+      &-goto {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .icon {
+    color: $primary-color;
+    font-size: 1.1rem;
+
+    &.difficulty {
+      color: $difficulty-color--easy;
+    }
+
+    &.arrow-up {
+      color: $elevation-color--up;
+      font-size: 0.8rem;
+    }
+
+    &.arrow-down {
+      color: $elevation-color--down;
+      font-size: 0.8rem;
+    }
+
+    &.bookmark {
+      opacity: 0.5;
+
+      &:hover {
+        color: $secondary-color;
+        opacity: 1;
+      }
+    }
+  }
+
+  &:hover {
+    .trekcard-container-img {
+      transform: scale(0.9);
+      filter: brightness(0.9);
+    }
+
+    .trekcard-container-background {
+      transform: translateY(0);
+    }
+  }
+}

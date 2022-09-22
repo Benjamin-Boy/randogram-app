@@ -1,0 +1,5 @@
+// Results WIDTH and HEIGHT of Trekcard
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}

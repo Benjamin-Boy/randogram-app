@@ -1,16 +1,23 @@
 // Imports React Properties/packages
 import React from "react";
+import { Routes, Route } from "react-router";
 
 // Imports React Components
 import Home from "./pages/Home";
-import Navbar from "./components/Navbar/Navbar";
+import Create from "./pages/Create";
+import SingleTrek from "./pages/SingleTrek";
+import Header from "./components/Header/Header";
 
 const App = () => {
   return (
-    <>
-      <Navbar />
-      <Home />
-    </>
+    <div className="app-container">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/treks/:id" element={<SingleTrek />} />
+        <Route path="/create" element={<Create />} />
+      </Routes>
+    </div>
   );
 };
 

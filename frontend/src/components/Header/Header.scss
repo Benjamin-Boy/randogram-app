@@ -1,0 +1,101 @@
+@use "../../scss/abstracts" as *;
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: $primary-color;
+  // box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+  padding: 0 2rem;
+  gap: 1.5rem;
+
+  &-left {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    img {
+      width: 150px;
+    }
+  }
+
+  &-center {
+    flex-grow: 1;
+    width: 80%;
+
+    &-search {
+      background-color: $gray;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem;
+      padding-left: 0.8rem;
+      border-radius: 1.5rem;
+      height: 50px;
+
+      input {
+        font-size: 1.2rem;
+        border-radius: 1.1rem;
+        padding-left: 0.5rem;
+        width: 95%;
+        height: 85%;
+        cursor: text;
+        outline: none;
+        background-color: transparent;
+        border: none;
+        border: 2px solid transparent;
+
+        &:focus {
+          border: 2px solid $secondary-color;
+        }
+      }
+
+      .search {
+        font-size: 1.2rem;
+        color: #5e5e5e;
+      }
+    }
+  }
+
+  &-right {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+
+    &-username {
+      white-space: nowrap;
+      color: $gray;
+
+      & > h5 > span {
+        color: $secondary-color;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+
+    &.avatar {
+      font-size: 3rem;
+    }
+
+    &.create {
+      color: black;
+
+      &:hover {
+        animation: createButtonScale 200ms forwards;
+      }
+    }
+  }
+}

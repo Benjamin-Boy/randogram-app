@@ -4,37 +4,47 @@ import PropTypes from "prop-types";
 
 // Imports React Components
 import Trekcard from "../components/Trekcard/Trekcard";
-import Trekinfos from "../components/Trekinfos/Trekinfos";
+import Featuring from "../components/Featuring/Featuring";
+import Profile from "../components/Profile/Profile";
 
 // Impots Scss Styles
-import "../scss/style.scss";
+// import "../scss/style.scss";
 
 const Home = (props) => {
   return (
     <div className="home-container">
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-      <Trekcard />
-
-      {/* <Trekinfos /> */}
+      <section className="home-container-trekcards">
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+        <Trekcard />
+      </section>
+      <aside className="home-container-featuring">
+        <Featuring />
+      </aside>
+      <section className="home-container-profile">
+        <Profile />
+      </section>
     </div>
   );
 };

@@ -1,5 +1,5 @@
-@use "./abstracts" as *; //TODO Pourquoi pas @useici ?
+@use "./abstracts" as vars;
 @use "./base";
 @use "./pages";
 @use "./layouts";
-@use "./components";
+// @use "./components";
